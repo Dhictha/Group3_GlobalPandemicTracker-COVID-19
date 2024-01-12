@@ -32,3 +32,8 @@ msg = (f"{country} has a total population of {population} people.\n"
  
 with open("covid_data.txt", "w") as txt_file:
         txt_file.write(msg + '\n') 
+
+def app_exit():
+    exit_choice = input("We hope you find the information useful and that it helps in making better decisions regarding your travel plans.\n"
+                        "Upon completion, would you like to exit the app? Yes or No?: ").lower()
+    return exit_choice == "yes"
