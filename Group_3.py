@@ -14,3 +14,14 @@ def display_country_info(country_info):
     languages = ', '.join(f"{k}: {v}" for k, v in country_info[0]['languages'].items())
     currencies = ', '.join(f"{k}: {v['name']} ({v['symbol']})" for k, v in country_info[0]['currencies'].items())
  
+def display_covid_info(covid_info):
+    cases = covid_info['cases']
+    deaths = covid_info['deaths']
+    recovered = covid_info['recovered']
+    population = covid_info['population']
+    tests = covid_info['tests']
+ 
+    tested_positive = cases
+    tested_negative = tests - cases
+    population_left_after_covid = population - deaths
+ 
