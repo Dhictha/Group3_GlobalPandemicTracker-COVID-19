@@ -5,6 +5,11 @@ Your one-stop app for information about COVID-19 around the globe.
 To stay up-to-date with relevant information about the pandemic in different countries around the globe,
 this app is here to meet your needs."""
 
+class ConsoleColors:
+    BOLD = '\033[1m'
+    RESET = '\033[0m'
+    GREEN = '\033[92m'
+    
 def display_country_info(country_info):
     continent = ', '.join(country_info[0]['continents'])
     area_value = country_info[0]['area']
