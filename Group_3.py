@@ -61,3 +61,8 @@ if __name__ == "__main__":
         else:
             print(f"Failed to fetch data for {info_needed}. Please check the country name or try again later.")
 
+        if app_exit():
+            print("We are sad to see you leave! You can click on this link {https://www.who.int/emergencies/diseases/novel-coronavirus-2019} to get more information about COVID-19.")
+            break
+        else:
+           continue
