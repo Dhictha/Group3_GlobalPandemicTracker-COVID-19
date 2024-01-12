@@ -42,3 +42,22 @@ def app_exit():
     exit_choice = input("We hope you find the information useful and that it helps in making better decisions regarding your travel plans.\n"
                         "Upon completion, would you like to exit the app? Yes or No?: ").lower()
     return exit_choice == "yes"
+
+if __name__ == "__main__":
+    while True:
+        info_needed = input(f"{ConsoleColors.BOLD}{ConsoleColors.GREEN}{welcome_msg}.{ConsoleColors.RESET} \n"
+                            f"Kindly select (COVID, Rest countries:) ")
+        country = input("Enter the country of your choice: ")
+ 
+        endpoint = construct_api_endpoint(info_needed, country)
+ 
+        response = requests.get(endpoint)
+        if response.status_code == 200:
+            data = response.json()
+            if info_needed == "Rest countries":
+                display_country_info(data)
+            elif info_needed == "COVID":
+                display_covid_info(data)
+        else:
+            print(f"Failed to fetch data for {info_needed}. Please check the country name or try again later.")
+
