@@ -25,3 +25,10 @@ def display_covid_info(covid_info):
     tested_negative = tests - cases
     population_left_after_covid = population - deaths
  
+msg = (f"{country} has a total population of {population} people.\n"
+           f"Out of the {population} people, {tested_positive} tested positive for COVID-19 and {tested_negative} tested negative.\n"
+           f"Fortunately, some people survived COVID-19, but the number of people who couldn't survive was {deaths}.\n"
+           f"That's very unfortunate! \nPopulation left after COVID: {population_left_after_covid}")
+ 
+with open("covid_data.txt", "w") as txt_file:
+        txt_file.write(msg + '\n') 
