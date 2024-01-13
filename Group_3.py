@@ -1,15 +1,19 @@
+# Importing the 'requests' library from the '_vendor' module.
 from pip._vendor import requests
- 
+
+# A welcome message for the COVID-19 Tracker application.
 welcome_msg = """Welcome to the Global Pandemic (COVID-19) Tracker!
 Your one-stop app for information about COVID-19 around the globe.
 To stay up-to-date with relevant information about the pandemic in different countries around the globe,
 this app is here to meet your needs."""
 
+# Class to define console colors for better visual presentation.
 class ConsoleColors:
     BOLD = '\033[1m'
     RESET = '\033[0m'
     GREEN = '\033[92m'
     
+# Function to display information about a country based on API response.    
 def display_country_info(country_info):
     continent = ', '.join(country_info[0]['continents'])
     area_value = country_info[0]['area']
@@ -19,13 +23,15 @@ def display_country_info(country_info):
     languages = ', '.join(f"{k}: {v}" for k, v in country_info[0]['languages'].items())
     currencies = ', '.join(f"{k}: {v['name']} ({v['symbol']})" for k, v in country_info[0]['currencies'].items())
 
+# Extracting various information from the API
     msg = (f"{country} is located in {continent}. It has an area of {area_value} and {population} number of people.\n"
            f"The capital of {country} is {capital} and their timezone is {timezone}.\n"
            f"They speak these languages: {languages} and their currency is {currencies}.")
-
+# Creating a formatted message with extracted information.
     with open("country_data.txt", "w", encoding='utf-8') as txt_file:
         txt_file.write(msg + '\n')
-        
+
+# Writing the information to a text file named 'country_data.txt'.      
 def display_covid_info(covid_info):
     cases = covid_info['cases']
     deaths = covid_info['deaths']
