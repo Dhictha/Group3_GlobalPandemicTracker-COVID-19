@@ -18,6 +18,13 @@ def display_country_info(country_info):
     timezone = ', '.join(country_info[0]['timezones'])
     languages = ', '.join(f"{k}: {v}" for k, v in country_info[0]['languages'].items())
     currencies = ', '.join(f"{k}: {v['name']} ({v['symbol']})" for k, v in country_info[0]['currencies'].items())
+
+    msg = (f"{country} is located in {continent}. It has an area of {area_value} and {population} number of people.\n"
+           f"The capital of {country} is {capital} and their timezone is {timezone}.\n"
+           f"They speak these languages: {languages} and their currency is {currencies}.")
+ 
+    with open("country_data.txt", "w", encoding='utf-8') as txt_file:
+        txt_file.write(msg + '\n')
  
 def display_covid_info(covid_info):
     cases = covid_info['cases']
