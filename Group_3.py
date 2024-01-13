@@ -37,18 +37,27 @@ def display_covid_info(covid_info):
     tested_negative = tests - cases
     population_left_after_covid = population - deaths
  
-msg = (f"{country} has a total population of {population} people.\n"
+    msg = (f"{country} has a total population of {population} people.\n"
            f"Out of the {population} people, {tested_positive} tested positive for COVID-19 and {tested_negative} tested negative.\n"
            f"Fortunately, some people survived COVID-19, but the number of people who couldn't survive was {deaths}.\n"
            f"That's very unfortunate! \nPopulation left after COVID: {population_left_after_covid}")
  
-with open("covid_data.txt", "w") as txt_file:
+    with open("covid_data.txt", "w") as txt_file:
         txt_file.write(msg + '\n') 
 
 def app_exit():
     exit_choice = input("We hope you find the information useful and that it helps in making better decisions regarding your travel plans.\n"
                         "Upon completion, would you like to exit the app? Yes or No?: ").lower()
     return exit_choice == "yes"
+
+def construct_api_endpoint(info_needed, country):
+    if info_needed == "Rest countries":
+        return f"https://restcountries.com/v3.1/name/{country}?fullText=true"
+    elif info_needed == "COVID":
+        return f"https://disease.sh/v3/covid-19/countries/{country}"
+    else:
+        print(f"Invalid choice. {info_needed}")
+        exit() 
 
 if __name__ == "__main__":
     while True:
