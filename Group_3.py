@@ -19,13 +19,12 @@ def display_country_info(country_info):
     languages = ', '.join(f"{k}: {v}" for k, v in country_info[0]['languages'].items())
     currencies = ', '.join(f"{k}: {v['name']} ({v['symbol']})" for k, v in country_info[0]['currencies'].items())
 
-    msg = (f"{country} has a total population of {population} people.\n"
-           f"Out of the {population} people, {tested_positive} tested positive for COVID-19 and {tested_negative} tested negative.\n"
-           f"Fortunately, some people survived COVID-19, but the number of people who couldn't survive was {deaths}.\n"
-           f"That's very unfortunate! \nPopulation left after COVID: {population_left_after_covid}")
- 
-    with open("covid_data.txt", "w") as txt_file:
-        txt_file.write(msg + '\n') 
+    msg = (f"{country} is located in {continent}. It has an area of {area_value} and {population} number of people.\n"
+           f"The capital of {country} is {capital} and their timezone is {timezone}.\n"
+           f"They speak these languages: {languages} and their currency is {currencies}.")
+
+    with open("country_data.txt", "w", encoding='utf-8') as txt_file:
+        txt_file.write(msg + '\n')
         
 def display_covid_info(covid_info):
     cases = covid_info['cases']
@@ -43,7 +42,7 @@ def display_covid_info(covid_info):
            f"Fortunately, some people survived COVID-19, but the number of people who couldn't survive was {deaths}.\n"
            f"That's very unfortunate! \nPopulation left after COVID: {population_left_after_covid}")
  
-with open("covid_data.txt", "w") as txt_file:
+    with open("covid_data.txt", "w") as txt_file:
         txt_file.write(msg + '\n') 
 
 def app_exit():

@@ -1,0 +1,5 @@
+KENYA has a total population of 56215221 people.
+Out of the 56215221 people, 344130 tested positive for COVID-19 and 3622932 tested negative.
+Fortunately, some people survived COVID-19, but the number of people who couldn't survive was 5689.
+That's very unfortunate! 
+Population left after COVID: 56209532
