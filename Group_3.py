@@ -30,6 +30,7 @@ def display_country_info(country_info):
 # Creating a formatted message with extracted information.
     with open("country_data.txt", "w", encoding='utf-8') as txt_file:
         txt_file.write(msg + '\n')
+        print("Kindly check your text file")
 
 # Writing the information to a text file named 'country_data.txt'.      
 def display_covid_info(covid_info):
@@ -50,7 +51,7 @@ def display_covid_info(covid_info):
  
     with open("covid_data.txt", "w") as txt_file:
         txt_file.write(msg + '\n') 
-
+        print("Kindly check your text file")
 def app_exit():
     exit_choice = input("We hope you find the information useful and that it helps in making better decisions regarding your travel plans.\n"
                         "Upon completion, would you like to exit the app? Yes or No?: ").lower()

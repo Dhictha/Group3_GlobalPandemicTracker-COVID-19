@@ -1,3 +1,3 @@
-Israel is located in Asia. It has an area of 20770.0 and 9216900 number of people.
-The capital of Israel is Jerusalem and their timezone is UTC+02:00.
-They speak these languages: ara: Arabic, heb: Hebrew and their currency is ILS: Israeli new shekel (₪).
+kenya is located in Africa. It has an area of 580367.0 and 53771300 number of people.
+The capital of kenya is Nairobi and their timezone is UTC+03:00.
+They speak these languages: eng: English, swa: Swahili and their currency is KES: Kenyan shilling (Sh).
